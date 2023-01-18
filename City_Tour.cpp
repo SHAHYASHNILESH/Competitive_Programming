@@ -11,7 +11,7 @@ int main()
    
    while(t--){
        
-       int n;
+       long long n;
        cin >> n;
        cout << 4*n <<endl;
    }
