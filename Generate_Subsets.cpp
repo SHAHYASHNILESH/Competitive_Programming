@@ -1,4 +1,5 @@
 //Generate Subsets
+//TC:O(2^N)
 
 #include <iostream>
 #include<bits/stdc++.h>
