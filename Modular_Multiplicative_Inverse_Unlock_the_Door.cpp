@@ -1,10 +1,8 @@
 //Modular Multiplicative Inverse:Modular Arithmetic for Division
 //M is prime
 
-//There are N children and K toffees.K<N
-//Count the number of ways to distribute toffee among N students such that each student get one toffee only -->nCk,%M,M=1e9+7,N<10^6,K<N<10^6,Q<10^5
-//n!/((n-k)!*k!) is to be found
-//TC:O(q*log(N)+N)
+//Unlock the door
+//TC:O(T*log(N)+N)
 
 #include <iostream>
 #include<bits/stdc++.h>
@@ -30,12 +28,11 @@ int binExp(int a,int b,int m){
     return ans;
 }
 
-const int N=1e6+10;
+const int N=1e5+10;
 int fact[N];
 
 int main()
 {
-    cout << binExp(2,M-2,M)<< endl;
     fact[0]=1;
     
     for(int i=1;i<N;i++){
@@ -43,19 +40,21 @@ int main()
         fact[i]=(fact[i-1]*1LL*i)%M;
     }
     
-    int q;
-    cin >> q;
+    int t;
+    cin >> t;
     
-    while(q--){
+    while(t--){
         
         int n,k;
         cin >> n >> k;
         
         int ans=fact[n];
         
-        int deno=(fact[n-k]*1LL*fact[k])%M;
+        ans=(ans*1LL*fact[k])%M;
         
-        ans=(ans*binExp(deno,M-2,M))%M;
+        int deno=(fact[k-n]*1LL*fact[n])%M;
+        
+        ans=(ans*1LL*binExp(deno,M-2,M))%M;
         
         cout << ans << endl;
     }
