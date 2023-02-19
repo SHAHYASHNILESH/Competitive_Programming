@@ -39,7 +39,7 @@ int main()
         
         for(int j=0;j<n;j++){
             
-            cout << graph[i][j] << " ";
+            cout << graph1[i][j] << " ";
         }
         
         cout << endl;
