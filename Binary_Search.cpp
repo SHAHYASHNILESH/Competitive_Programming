@@ -1,4 +1,5 @@
-//Binary Search
+//Binary Search(Applicable to only Monotonic Functions)
+//TC:O(logn)
 
 #include <iostream>
 #include<bits/stdc++.h>
